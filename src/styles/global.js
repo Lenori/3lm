@@ -2,7 +2,6 @@ import {createGlobalStyle} from 'styled-components';
 import 'react-toastify/dist/ReactToastify.css';
 
 export default createGlobalStyle`
-    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
     * {
         margin: 0;
@@ -12,15 +11,31 @@ export default createGlobalStyle`
     }
 
     *:focus {
-        outiline: 0;
+        outline: 0;
     }
 
-    html, body, #root {
-        height: 100%;
+    :root {
+        --primary: #9f81e0;
+        --secondary: #921847;
+        --tertiary: #745ba9;
     }
 
     body {
         -webkit-font-smoothing: antialiased;
+        background-color: var(--primary);
+    }
+
+    button {
+        border: none;
+        background-color: var(--secondary);
+        padding: 20px 50px;
+        color: white;
+        font-weight: 600 !important;
+        transition: filter 0.3s;
+
+        &:hover {
+            filter: brightness(90%);
+        }
     }
 
     body, input, button {
